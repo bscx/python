@@ -1,5 +1,4 @@
 # Rock Paper Sciccors Lizard Spock
-#
 
 from random import randint
 
