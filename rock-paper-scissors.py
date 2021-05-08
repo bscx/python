@@ -1,4 +1,5 @@
 # Rock Paper Sciccors Lizard Spock
+# Boris Bischoff, 2021
 
 from random import randint
 
