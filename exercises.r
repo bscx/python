@@ -1,19 +1,27 @@
 # Exercise 1
 randomNumber <- sample(0:101, 1, replace=FALSE)
 humanInput <- -1
+numberOfGuesses <- 1
 
 while (randomNumber != humanInput) {
     humanInput <- readline("Guess my number! ")  
     humanInput <- as.numeric(humanInput)
+
+    # Error handling
+    if (is.na(humanInput)) {
+        humanInput <- 0
+        print("You just hit the Return key! Assuming you've meant 0.")
+    }
   
     if (humanInput == randomNumber) {
-        print("You guessed it!")
+        message(sprintf("You guessed it! It took you %s guesses. Highscore was 1 so far! :)", numberOfGuesses))
         break
     } else if (humanInput < randomNumber) {
         print("Your number is too low.")
     } else if (humanInput > randomNumber) {
         print("Your number is too high.")
     }
+    numberOfGuesses = numberOfGuesses + 1
 }
 
 # Exercise 2
