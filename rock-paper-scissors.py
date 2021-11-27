@@ -72,7 +72,10 @@ def run_game():
 
         # Error handling in case the user enters an invalid number
         while human_draw > 4:
-            human_draw = int(input())
+            try: 
+                human_draw = int(input())
+            except:
+                print('You did not enter a number but a character/string that the program was not ready to process.')
             if human_draw <= 4:
                 break
             else:
